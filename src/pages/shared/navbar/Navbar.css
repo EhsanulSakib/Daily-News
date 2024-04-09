@@ -1,0 +1,12 @@
+nav a.active{
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: #000;
+}
+
+nav a{
+    color: #706F6F;
+    text-decoration: none;
+}
