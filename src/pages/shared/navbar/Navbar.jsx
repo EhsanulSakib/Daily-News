@@ -6,7 +6,13 @@ import { AuthContext } from "../../../provider/AuthProvider";
 
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     const links = <>
         <li><NavLink to='/' >Home</NavLink></li>
         <li><NavLink to='/about'>About</NavLink></li>
@@ -40,7 +46,7 @@ const Navbar = () => {
                     </div>
                     {
                         user ?
-                            <button className="ml-2 btn hover:text-black bg-[#403F3F] text-white font-bold"> Sign Out</button>
+                            <button onClick={handleSignOut} className="ml-2 btn hover:text-black bg-[#403F3F] text-white font-bold"> Sign Out</button>
                             :
                             <Link to='/login'>
                                 <a className="ml-2 btn hover:text-black bg-[#403F3F] text-white font-bold">Login</a>

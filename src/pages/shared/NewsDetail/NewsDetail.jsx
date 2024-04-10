@@ -27,8 +27,13 @@ const NewsDetail = ({ category }) => {
             <div className="">
                 <h2 className="text-xl font-bold">{title}</h2>
                 <img src={image_url} alt="" className="w-full" />
-                <p className="text-sm text-[#706F6F]">{details.slice(0 - 200)}</p>
-                <Link className="no-underline text-[#FF8C47]">Read More</Link>
+                {
+                    details.length > 200 ?
+                        <p className="text-sm text-[#706F6F]">{details.slice(0 - 200)}</p>
+                        :
+                        <p className="text-sm text-[#706F6F]">{details}</p>
+                }
+                <Link to={`/news/${_id}`} className="no-underline text-[#FF8C47]">Read More</Link>
                 <hr className="border-dashed border-[#E7E7E7]" />
                 <div className="flex justify-between px-2">
                     <div className="flex items-center gap-4">
